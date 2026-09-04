@@ -15,7 +15,6 @@ student_query = st.text_area("Your Question or Request:")
 if st.button("Submit Request"):
     if student_name and student_query:
         with st.spinner("Processing..."):
-
             ai_model = genai.GenerativeModel('gemini-pro')
             response = ai_model.generate_content(student_query)
             st.success("Your answer is ready!")
