@@ -1,4 +1,3 @@
-import os
 import streamlit as st
 import google.generativeai as genai
 
@@ -16,7 +15,6 @@ student_query = st.text_area("Your Question or Request:")
 if st.button("Submit Request"):
     if student_name and student_query:
         with st.spinner("Processing..."):
-            # Using the stable model name directly inside the click event
             ai_model = genai.GenerativeModel('gemini-1.5-flash')
             response = ai_model.generate_content(student_query)
             st.success("Your answer is ready!")
