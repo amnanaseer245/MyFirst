@@ -1,7 +1,11 @@
+import os
 import streamlit as st
 import google.generativeai as genai
 
-genai.configure(api_key="AQ.Ab8RN6IQHDaF_VFFHF05Elfds515ywgaeJKpyds_u0GgNXOAw")
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+genai.configure(api_key=GOOGLE_API_KEY)
+
+model = genai.GenerativeModel('gemini-pro')
 
 st.title("🎓 Education AI Student Assistant")
 st.write("You can ask your academic questions here!")
